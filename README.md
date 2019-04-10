@@ -1,6 +1,3 @@
-Group Project - README Template
-===
-
 # My Driver
 
 ## Table of Contents
@@ -78,10 +75,40 @@ An app that can be used to make people who needs a driver with a car find it eas
 <img src="https://i.imgur.com/A64cgcp.jpg" width=800>
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+ | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | Username      | String   | unique id user|
+   |password |String | user password|
+   |type | bool | driver or rider
+   | distance | float | distance from driver to rider|
+   |Mylocation | clloction | the location of Rider|
+   |Driver location | cllocation | the location of driver|
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+   - login/signup
+      - (Create/user) create new user
+         ```swift
+            let user = PFUser()
+            user.username = userNameTextfield.text
+            user.password = passwordTextfield.text
+            user["isdriver"] = `switch`.isOn
+            user.signUpInBackground { (succeed, error) in
+                if let error = error{
+                    if let errorString = error as? String{
+                        self.displayallert(title: "error signing up ", message: errorString)
+                    }
+                }
+            }
+         ```
+      - (get/user) check if username and password are right and if this is a driver or a rider
+   - Riders view controller
+      - (Create/request) create new request for driver
+      - (Delete/request) cancel request
+      - (Create/location) 
+   - Requests view controller
+      - (Read/GET) requests reading from parse
+   - Drivers view controller
+      - (Read/GET) read riders location
+      - (create/location)create drivers location
+
