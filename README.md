@@ -25,7 +25,7 @@ An app that can be used to make people who needs a driver with a car find it eas
 
 **Required Must-have Stories**
 
-[x] User can login and signup
+* User can login and signup -[x]
 * User can log out
 * User can stay logged in
 * User can see his location
